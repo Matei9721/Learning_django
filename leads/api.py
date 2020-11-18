@@ -1,7 +1,7 @@
 from rest_framework.filters import OrderingFilter
 from django_filters.rest_framework import DjangoFilterBackend
 
-from leads.models import Lead, Movie
+from leads.models import Lead, Movie, Countries
 from rest_framework import viewsets, permissions
 from .serializers import LeadSerializer, MovieSerializer
 
@@ -29,4 +29,12 @@ class MovieViewSet(viewsets.ModelViewSet):
         permissions.AllowAny
     ]
     serializer_class = MovieSerializer
+
+
+json_data = open('leads/fixtures/movie.json')
+data1 = json.load(json_data)  # deserialises it
+data2 = json.dumps(data1)  # json formatted string
+
+json_data.close()
+
 
