@@ -12,6 +12,10 @@ class Countries(models.Model):
     country_name = models.CharField(max_length=100)
 
 
+class Actors(models.Model):
+    actor_name = models.CharField(max_length=100)
+
+
 class Movie(models.Model):
 
     title = models.CharField(max_length=100, unique=False, null=True)
@@ -26,6 +30,7 @@ class Movie(models.Model):
     imdb_url = models.CharField(max_length=100, unique=True, null=True)
     tagline = models.CharField(max_length=100, null=True, )
     countries = models.ManyToManyField(Countries)
+    actors = models.ManyToManyField(Actors)
 
 
 

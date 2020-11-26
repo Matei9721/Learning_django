@@ -1,9 +1,10 @@
 from rest_framework import routers
-from .api import LeadViewSet, MovieViewSet
+from .api import LeadViewSet, MovieViewSet,CountriesViewSet
 
 router = routers.DefaultRouter()
-router.register('api/leads', LeadViewSet, 'leads')
-router.register('api/movies', MovieViewSet, 'movies')
+router.register(r'api/leads', LeadViewSet, 'leads')
+router.register(r'api/movies', MovieViewSet, 'movies')
+router.register(r'api/countries', CountriesViewSet, 'countries')
 
 urlpatterns = router.urls
 
